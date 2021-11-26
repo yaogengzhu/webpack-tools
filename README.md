@@ -4,3 +4,8 @@
 ```bash
 npm link
 ```
+
+执行
+```bash
+npx zf-pack
+```
