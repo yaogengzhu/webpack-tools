@@ -8,5 +8,7 @@ let config = require(path.resolve('webpack.config.js'))
 // console.log(config)
 let Complier = require('../lib/Compiler.js')
 let compiler = new Complier(config)
+
+compiler.ahooks.entryOptions.call()
 // 编译时运行
 compiler.run()
