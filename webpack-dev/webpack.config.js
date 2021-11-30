@@ -15,13 +15,14 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                loader: 'loader1', // 从右向左, 从下到上
-                enforce: 'pre', // 可以改变顺序
-            },
-            {
-                test: /\.js$/,
-                loader: 'loader2', // 从右向左, 从下到上
-            },
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
+          
         ]
     },
 }

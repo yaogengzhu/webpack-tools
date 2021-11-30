@@ -7,10 +7,12 @@
         "zf-pack": "./bin/zf-pack.js"
     },
     "dependencies": {
+        "@babel/core": "^7.16.0",
         "@babel/generator": "^7.16.0",
         "@babel/traverse": "^7.16.3",
         "@babel/types": "^7.16.0",
         "babylon": "^6.18.0",
-        "ejs": "^3.1.6"
+        "ejs": "^3.1.6",
+        "loader-utils": "^3.2.0"
     }
 }
