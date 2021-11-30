@@ -10,6 +10,7 @@ module.exports = {
     resolveLoader: {
         modules: ['node_modules', path.resolve(__dirname, 'loader')],
     },
+    devtool: 'source-map',
     module: {
         // loader分类， pre 在前面， post 在后面， normal： 中间
         rules: [
