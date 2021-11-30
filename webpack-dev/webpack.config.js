@@ -1,13 +1,4 @@
 let path = require('path')
-
-class P {
-    apply(compiler) {
-        console.log('start')
-        compiler.hooks.emit.tap('emit', function(e) {
-            console.log('emit事件')
-        })
-    }
-}
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
@@ -16,15 +7,21 @@ module.exports = {
         filename: 'boundle.js',
         clean: true
     },
+    resolveLoader: {
+        modules: ['node_modules', path.resolve(__dirname, 'loader')],
+    },
     module: {
+        // loader分类， pre 在前面， post 在后面， normal： 中间
         rules: [
             {
-                test: /\.less$/,
-                loader: [path.resolve(__dirname, 'loader', 'style-loader'), path.resolve(__dirname, 'loader', 'less-loader')],
-            }
+                test: /\.js$/,
+                loader: 'loader1', // 从右向左, 从下到上
+                enforce: 'pre', // 可以改变顺序
+            },
+            {
+                test: /\.js$/,
+                loader: 'loader2', // 从右向左, 从下到上
+            },
         ]
     },
-    plugins: [
-        new P()
-    ]
 }
