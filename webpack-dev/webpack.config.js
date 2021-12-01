@@ -10,6 +10,7 @@ module.exports = {
     resolveLoader: {
         modules: ['node_modules', path.resolve(__dirname, 'loader')],
     },
+    watch: true,
     devtool: 'source-map',
     module: {
         // loader分类， pre 在前面， post 在后面， normal： 中间
@@ -17,12 +18,22 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: {
-                    loader: 'babel-loader',
+                    loader: 'banner-loader',
                     options: {
-                        presets: ['@babel/preset-env']
+                        text: 'yaogengzhu',
+                        filename: path.resolve(__dirname, 'banner.js')
                     }
                 }
             }
+            // {
+            //     test: /\.js$/,
+            //     use: {
+            //         loader: 'babel-loader',
+            //         options: {
+            //             presets: ['@babel/preset-env']
+            //         }
+            //     }
+            // }
           
         ]
     },

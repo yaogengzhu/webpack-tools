@@ -12,6 +12,7 @@
     "@babel/preset-env": "^7.16.4",
     "less": "^4.1.2",
     "loader-utils": "^3.2.0",
+    "schema-utils": "^4.0.0",
     "tapable": "^2.2.1",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1"
